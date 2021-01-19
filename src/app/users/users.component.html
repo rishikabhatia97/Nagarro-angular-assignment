@@ -1,0 +1,19 @@
+
+<ng-container *ngIf="users.length != 0; else elseBlock">
+    <table class="table is-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td appHighlighter>{{user.email}}</td>
+        </tr>
+    </table>
+</ng-container>
+
+<ng-template #elseBlock>
+    <h2>No content</h2>
+</ng-template>
